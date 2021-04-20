@@ -2,11 +2,13 @@
 *::before{}
 *::after{
     box-sizing: border-box;
+    
 }
 body{
     margin: 0;
     font-family: sans-serif;
     line-height: 1.6;
+    background-color: #eee;
 }
 
 img{
@@ -64,16 +66,17 @@ h1 h2 h3 p{
     text-transform: uppercase;
 
 }
-.section{
-    padding: 7em 0;
-}
 .section-title{
     text-align: center;
     font-size: clamp(2.5rem,calc(5vm+1rem),4.5rem);
     line-height: 1;
     color: #17353d;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
 }
+.section{
+    padding: 7em 0;
+}
+
 
 .hero{
     color: white;
@@ -81,7 +84,7 @@ h1 h2 h3 p{
     padding: 15em 0;
     background : #222;
  
-    @supports(background-blend-mode:mulyiply){
+    @supports (background-blend-mode:mulyiply){
         background-image:
         url(../image2.png),
         radial-gradient(#444,#111);
@@ -102,15 +105,24 @@ h1 h2 h3 p{
     text-decoration: none;
     color: #333;
     text-align: center;
+    line-height: 1.2;
 
 }
-.featured{
-    color: #eee;
+span{
+    display: block;
+    font-weight: 700;
+    font-size: 2.5rem;
 }
+.featured{
+    background-color: #eee;
+}
+
 .featured_item:hover,
 .featured_item:focus{
     transform: scale(1);
+    
 }
+
 .featured_item::after{
     content: '';
     position: absolute;
@@ -121,5 +133,65 @@ h1 h2 h3 p{
     background: #2193b0;
     z-index: -1;
     
+}
+.product{
+    background: radial-gradient(limegreen,purple);
+    padding: 3em 0;
+    border-radius: 1em;
+    margin-bottom: 3em;
+    text-align: center;
 
 }
+.product_title{
+    font-size: 4rem;
+    line-height: 1.1;
+    color: #fff;
+    text-shadow: 0 0 .2em black;
+    text-align: center;
+}
+.hero{
+    --clr-accent:#faa700;
+}
+
+.product__image {
+    margin: -5em 0 0 0;
+  }
+  
+  @media (min-width: 45em) {
+    .product {
+      text-align: left;
+      margin-bottom: 9em;
+    }
+    .product__title {
+      margin: 0;
+    }
+    .product__image {
+      float: right;
+      width: 65%;
+      shape-outside: url(../img/shoe-1.png);
+      shape-margin: 1em;
+      margin: 0 -5em 0 0;
+    }
+    .product.shoe-left .product__image {
+      float: left;
+      shape-outside: url(../img/shoe-2.png);
+      margin: 0 0 0 -5em;
+      shape-margin: 2em;
+    }
+  }
+.shoe_one{
+    background: radial-gradient(red,orange);
+    --clr-accent:limegreen;
+
+}
+.shoe_two{
+    background: radial-gradient(#fce4b3,#eac886);
+    --clr-accent:#2f4858;
+}
+.shoe_three{
+    background: radial-gradient(#6dd5ed,#2193b0);
+    --clr-accent:#008951;
+}
+
+
+
